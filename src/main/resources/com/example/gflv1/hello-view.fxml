@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gflv1.HelloController">
+   <center>
+      <VBox alignment="CENTER" spacing="20.0">
+          <padding>
+              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+          </padding>
+      
+          <Label fx:id="answerText" />
+         <TextField fx:id="tfFunction" />
+          <Button onAction="#onHelloButtonClick" text="Calculate" />
+      </VBox>
+   </center>
+   <left>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="tvExpressions" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="columnExpression" prefWidth="75.0" text="Expression" />
+                <TableColumn fx:id="columnValue" prefWidth="75.0" text="Value" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <HBox prefHeight="43.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onBtnEdit" text="Edit" />
+                  <Button mnemonicParsing="false" onAction="#onBtnDelete" text="Delete" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <VBox alignment="CENTER" prefHeight="245.0" prefWidth="137.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Find" />
+            <TextField fx:id="tfNumer" />
+            <HBox prefHeight="50.0" prefWidth="89.0" spacing="5.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onBtnEquals" text="=" />
+                  <Button mnemonicParsing="false" onAction="#onBtnLess" text="&lt;" />
+                  <Button mnemonicParsing="false" onAction="#onBtnMore" text="&gt;" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <Button mnemonicParsing="false" onAction="#onBtnShowAll" text="Show all" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </right>
+</BorderPane>
